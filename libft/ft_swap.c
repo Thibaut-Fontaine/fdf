@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/26 10:04:27 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/26 15:30:34 by tfontain         ###   ########.fr       */
+/*   Created: 2017/03/26 15:32:07 by tfontain          #+#    #+#             */
+/*   Updated: 2017/03/26 15:33:26 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fdf.h"
-#include <mlx.h>
+#include "./includes/libft.h"
 
-int				main()
+void		ft_swap(int *a, int *b)
 {
-	t_mlx		*mlx;
-	t_coord		*p1;
-	t_coord		*p2;
+	int		tmp;
 
-	mlx = malloc(sizeof(t_mlx));
-	p1 = malloc(sizeof(t_coord));
-	p2 = malloc(sizeof(t_coord));
-	mlx->p = mlx_init();
-	mlx->w = mlx_new_window(mlx->p, 640, 480, "fdf");
-	p1->x = 500;
-	p1->y = 200;
-	p2->x = 100;
-	p2->y = 50;
-	print_line(*mlx, *p1, *p2, 0x000000FF);
-	mlx_loop(mlx->p);
-	return (0);
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }

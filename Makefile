@@ -6,7 +6,7 @@
 #    By: tfontain <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/26 14:26:04 by tfontain          #+#    #+#              #
-#    Updated: 2017/03/26 14:50:15 by tfontain         ###   ########.fr        #
+#    Updated: 2017/03/26 15:23:06 by tfontain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	make -C libft/
 	$(CC) $(FLAG) $(OPTION) $(SRC)
-	$(CC) -o $(NAME) $(OBJ) -lmlx -framework OpenGL -framework AppKit
+	$(CC) -o $(NAME) $(OBJ) -L/ libft/libft.a -lmlx -framework OpenGL -framework AppKit
 
 %.o : %.c
 	$(CC) $(FLAG) $(OPTION) -c $< -o $@

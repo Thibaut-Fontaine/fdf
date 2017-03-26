@@ -6,7 +6,7 @@
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 08:08:01 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/26 14:35:25 by tfontain         ###   ########.fr       */
+/*   Updated: 2017/03/26 15:21:48 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,28 @@
 
 void		print_line(t_mlx mlx, t_coord p1, t_coord p2, int color)
 {
-	int		dx = p2.x - p1.x;
-	int		dy = p2.y - p1.y;
-	int		x;
-	int		y;
+	double	dx = p1.x - p2.x;
+	double	dy = p1.y - p2.y;
+	
+	dx = dx < 0 ? -dx : dx;
+	dy = dy < 0 ? -dy : dy;
+	ft_putnbr(dy);
+	if (dx == 0)
+		; //print_vertical
+	double	dr = fabs(dy / dx);
+	double error = dr - 0.5;
+	int y = p2.y;
+	int x = p2.x;
 
-
-	x = p1.x;
-	while (x < p2.x)
+	while (x < p1.x)
 	{
-		y = p1.y + dy * (x - p1.x) / dx;
 		mlx_pixel_put(mlx.p, mlx.w, x, y, color);
+		error = error + dr;
+		if (error >= 0.5)
+		{
+			y = y + 1;
+			error = error - 1.0;
+		}
 		++x;
 	}
 }
