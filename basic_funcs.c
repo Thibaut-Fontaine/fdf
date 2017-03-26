@@ -6,7 +6,7 @@
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 08:08:01 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/26 15:21:48 by tfontain         ###   ########.fr       */
+/*   Updated: 2017/03/26 15:42:23 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@
 
 void		print_line(t_mlx mlx, t_coord p1, t_coord p2, int color)
 {
+	p1.x < p2.x ? ft_swap(&(p1.x), &(p2.x)) : 0;
+	p1.y < p2.y ? ft_swap(&(p1.x), &(p2.x)) : 0;
+
 	double	dx = p1.x - p2.x;
 	double	dy = p1.y - p2.y;
-	
-	dx = dx < 0 ? -dx : dx;
-	dy = dy < 0 ? -dy : dy;
-	ft_putnbr(dy);
+
 	if (dx == 0)
 		; //print_vertical
 	double	dr = fabs(dy / dx);
