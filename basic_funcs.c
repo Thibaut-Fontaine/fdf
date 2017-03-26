@@ -6,7 +6,7 @@
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 08:08:01 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/26 15:50:36 by tfontain         ###   ########.fr       */
+/*   Updated: 2017/03/26 16:11:29 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 
 void		print_line(t_mlx mlx, t_coord p1, t_coord p2, int color)
 {
-	if (p1.x < p2.x || p1.y < p2.y)
-		ft_swap(&p1, &p2);
+	if (p1.x * p1.y < p2.x * p2.y)
+		swap_coord(&p1, &p2);
 	double	dx = p1.x - p2.x;
 	double	dy = p1.y - p2.y;
 

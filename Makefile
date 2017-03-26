@@ -6,7 +6,7 @@
 #    By: tfontain <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/26 14:26:04 by tfontain          #+#    #+#              #
-#    Updated: 2017/03/26 15:23:06 by tfontain         ###   ########.fr        #
+#    Updated: 2017/03/26 16:10:03 by tfontain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = clang
 HEADER = ./fdf.h
 FLAG = -Wall -Wextra -Werror -O3
 OPTION = -c -I $(HEADER)
-SRC = ./basic_funcs.c ./main.c
+SRC = ./basic_funcs.c ./main.c ./funcs.c
 
 OBJ = $(addsuffix .o,$(basename $(SRC)))
 

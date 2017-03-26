@@ -6,7 +6,7 @@
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 08:10:27 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/26 14:27:30 by tfontain         ###   ########.fr       */
+/*   Updated: 2017/03/26 16:11:22 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ typedef struct	s_coord
 }				t_coord;
 
 void			print_line(t_mlx mlx, t_coord p1, t_coord p2, int color);
+void			swap_coord(t_coord *p1, t_coord *p2);
 
 #endif
