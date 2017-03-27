@@ -6,7 +6,7 @@
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 08:10:27 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/26 16:11:22 by tfontain         ###   ########.fr       */
+/*   Updated: 2017/03/27 10:16:48 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,27 @@
 # include <mlx.h>
 # include "./libft/includes/libft.h"
 
-typedef struct	s_mlx
+typedef struct			s_mlx
 {
-	void		*p;
-	void		*w;
-}				t_mlx;
+	void				*p;
+	void				*w;
+}						t_mlx;
 
-typedef struct	s_win
+typedef struct			s_coord
 {
-	t_mlx		*mlx;
-	int			len_x;
-	int			len_y;
-}				t_win;
+	int					x;
+	int					y;
+}						t_coord;
 
-typedef struct	s_coord
+typedef struct			s_coord_list
 {
-	int			x;
-	int			y;
-}				t_coord;
+	t_coord				coord;
+	struct s_coord_list	*next;
+}						t_coord_list;
 
-void			print_line(t_mlx mlx, t_coord p1, t_coord p2, int color);
-void			swap_coord(t_coord *p1, t_coord *p2);
+t_mlx					all_init(int size_x, int size_y, char *title);
+int						print_line(t_mlx mlx, t_coord p1, t_coord p2,
+		int color);
+void					swap_coord(t_coord *p1, t_coord *p2);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 08:08:01 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/26 17:01:00 by tfontain         ###   ########.fr       */
+/*   Updated: 2017/03/27 10:47:03 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,62 @@
 /*
 ** file for basic functions who display basic objects
 ** these funcs use the struct in the header
+** //
+** -----------> x
+** |
+** |
+** |
+** ↓
+** y
 */
+
+int				print_vertical_line(t_mlx mlx, t_coord p1, t_coord p2, int color)
+{
+	int			ret;
+
+	if (p1.x != p2.x)
+		return (-1);
+	if (p1.y > p2.y)
+		swap_coord(&p1, &p2);
+	ret = p2.y - p1.y;
+	while (p1.y < p2.y)
+	{
+		mlx_pixel_put(mlx.p, mlx.w, p1.x, p1.y, color);
+		++p1.y;
+	}
+	return (ret);
+}
+
 
 /*
-** print a line with predefined color
+** print a line with predefined color ; return number of printed pixels
 */
 
-void		print_line(t_mlx mlx, t_coord p1, t_coord p2, int color)
+int				print_line(t_mlx mlx, t_coord p1, t_coord p2, int color)
 {
+	float		dr;
+	float		error;
+	float		ret;
+
 	if (p1.x < p2.x)
 		swap_coord(&p1, &p2);
-	double	dx = p1.x - p2.x;
-	double	dy = p1.y - p2.y;
-
-	if (dx == 0)
-		; //print_vertical
-	double	dr = fabs(dy / dx);
-	double error = dr - 0.5;
-	int y = p2.y;
-	int x = p2.x;
-
-	while (x < p1.x)
+	if (p1.x - p2.x == 0)
+		return (print_vertical_line(mlx, p1, p2, color));
+	dr = fabs((float)(p1.y - p2.y) / (float)(p1.x - p2.x));
+	error = dr - 0.5;
+	ret = p1.x - p2.x;
+	while (p2.x < p1.x)
 	{
-		mlx_pixel_put(mlx.p, mlx.w, x, y, color);
-		error = error + dr;
+		mlx_pixel_put(mlx.p, mlx.w, p2.x, p2.y, color);
+		error += dr;
 		if (error >= 0.5)
 		{
-			y = y + 1;
-			error = error - 1.0;
+			p2.y += 1;
+			error -= 1.0;
 		}
-		++x;
+		++p2.x;
 	}
+	return (ret);
 }
 
 
