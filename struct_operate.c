@@ -6,7 +6,7 @@
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 09:40:36 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/27 10:15:21 by tfontain         ###   ########.fr       */
+/*   Updated: 2017/03/27 10:56:38 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,3 @@ t_mlx		all_init(int size_x, int size_y, char *title)
 	mlx.w = mlx_new_window(mlx.p, size_x, size_y, title);
 	return (mlx);
 }
-
-

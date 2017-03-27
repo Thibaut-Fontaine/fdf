@@ -6,7 +6,7 @@
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 08:08:01 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/27 10:47:03 by tfontain         ###   ########.fr       */
+/*   Updated: 2017/03/27 10:56:44 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 ** file for basic functions who display basic objects
 ** these funcs use the struct in the header
 ** //
-** -----------> x
-** |
+** ------> x
 ** |
 ** |
 ** ↓
 ** y
 */
 
-int				print_vertical_line(t_mlx mlx, t_coord p1, t_coord p2, int color)
+int				print_vertical_line(t_mlx mlx, t_coord p1, t_coord p2,
+		int color)
 {
 	int			ret;
 
@@ -40,7 +40,6 @@ int				print_vertical_line(t_mlx mlx, t_coord p1, t_coord p2, int color)
 	}
 	return (ret);
 }
-
 
 /*
 ** print a line with predefined color ; return number of printed pixels
@@ -66,15 +65,11 @@ int				print_line(t_mlx mlx, t_coord p1, t_coord p2, int color)
 		if (error >= 0.5)
 		{
 			p2.y += 1;
-			error -= 1.0;
+			error -= 1;
 		}
 		++p2.x;
 	}
 	return (ret);
 }
-
-
-
-
 
 

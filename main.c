@@ -6,7 +6,7 @@
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 10:04:27 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/27 10:41:17 by tfontain         ###   ########.fr       */
+/*   Updated: 2017/03/27 11:05:39 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,5 @@
 
 int				main()
 {
-	t_mlx		mlx;
-	t_coord		p1;
-	t_coord		p2;
-
-	p1.x = 700;
-	p1.y = 200;
-	p2.x = 500;
-	p2.y = 50;
-	mlx = all_init(1000, 1000, "FDF");
-	print_line(mlx, p1, p2, 0x00FF0000);
-	mlx_loop(mlx.p);
 	return (0);
 }
