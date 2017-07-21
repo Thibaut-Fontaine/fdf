@@ -1,17 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putint32_fd.c                                   :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 16:25:01 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/11 12:42:05 by tfontain         ###   ########.fr       */
+/*   Created: 2016/12/05 20:36:22 by tfontain          #+#    #+#             */
+/*   Updated: 2017/07/21 16:36:12 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	ft_putint32_fd(uint32_t i, t_bool is_signed)
-{
-}
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include "./libft.h"
+
+# define BUFF_SIZE 5
+# define S (((t_endl*)current->content)->s)
+
+int				get_next_line(const int fd, char **line);
+
+#endif

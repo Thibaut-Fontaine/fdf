@@ -6,7 +6,7 @@
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 08:10:27 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/27 11:06:43 by tfontain         ###   ########.fr       */
+/*   Updated: 2017/07/21 16:36:45 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include <math.h>
 # include <mlx.h>
 # include "./libft/includes/libft.h"
-# include "./getline/getline.h"
 
 typedef struct			s_mlx
 {

@@ -6,7 +6,7 @@
 /*   By: tfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 20:35:19 by tfontain          #+#    #+#             */
-/*   Updated: 2017/03/26 15:51:02 by tfontain         ###   ########.fr       */
+/*   Updated: 2017/07/21 16:32:50 by tfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include "./get_next_line.h"
 
 # define OUTPUT_LEN 4096
 
@@ -136,6 +137,9 @@ ssize_t				ft_putnbr_fdr(int n, int fd);
 
 ssize_t				ft_putnwstr_fdr(wchar_t const *s, size_t n, int fd);
 ssize_t				ft_putnstr_fdr(char const *s, size_t n, int fd);
+
+int					ft_dprintf(int fd, const char *format, ...);
+int					ft_printf(const char *format, ...);
 
 /*
 ** ft_put*[bin,hex] display len bytes in binary, with mpl max bytes per line.
